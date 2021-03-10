@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+        <%
+            var list = '';
+            for(i = 0; i < userlist.length; i++){
+                list += "<li><a href='mailto:" + userlist[i].email + "'>" + userlist[i].username + "</a></li>"
+            }
+        %>
+        <%- list %>
+    </ul>
+    <br>
+
+    <form action="/nuser" method="GET">
+        <button type="submit">Add new user</button>
+    </form>
+    
+</body>
+</html>
